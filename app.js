@@ -1,4 +1,5 @@
 const { Client, MessageMedia, LocalAuth } = require('whatsapp-web.js');
+import sslRedirect from 'heroku-ssl-redirect';
 const express = require('express');
 const { body, validationResult } = require('express-validator');
 const socketIO = require('socket.io');
@@ -13,6 +14,7 @@ const { dockStart } = require('@nlpjs/basic');
 const port = process.env.PORT || 8000;
 
 const app = express();
+app.use(sslRedirect());
 const server = http.createServer(app);
 const io = socketIO(server);
 
