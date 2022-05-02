@@ -4,14 +4,14 @@ const express = require('express');
 const { body, validationResult } = require('express-validator');
 const socketIO = require('socket.io');
 const qrcode = require('qrcode');
-const http = require('http');
+const http = require('https');
 const fs = require('fs');
 const { phoneNumberFormatter } = require('./helpers/formatter');
 const fileUpload = require('express-fileupload');
 const axios = require('axios');
 const mime = require('mime-types');
 const { dockStart } = require('@nlpjs/basic');
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3000;
 
 const app = express();
 app.use(sslRedirect());
